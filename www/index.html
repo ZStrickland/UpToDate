@@ -18,6 +18,15 @@
 	// device APIs are available
     //
     function onDeviceReady() {
+		if (localStorage.user != undefined) {
+			r = confirm("Reset Username and Password?");
+			if (r == true) {
+				localStorage.removeItem('user');
+				localStorage.removeItem('pass');
+			}
+		}
+		var user = localStorage.user;
+		var pass = localStorage.pass;
 		if (!user) {
 			localStorage.user = prompt("User Name","");
 		}
@@ -26,10 +35,12 @@
 		}
 		var user = localStorage.user;
 		var pass = localStorage.pass;
-		var ref = window.open('https://login.echo.louisville.edu/login?qurl=http%3a%2f%2fwww.uptodate.com%2fonline&user='+user+'&pass='+pass, '_system', 'location=yes');
+		var ref = window.open('https://login.echo.louisville.edu/login?qurl=http%3a%2f%2fwww.uptodate.com%2fonline&user='+localStorage.user+'&pass='+localStorage.pass, '_system', 'location=yes');
 	}
 
 	function onResume() {
+		var user = localStorage.user;
+		var pass = localStorage.pass;
 		var ref = window.open('https://login.echo.louisville.edu/login?qurl=http%3a%2f%2fwww.uptodate.com%2fonline&user='+user+'&pass='+pass, '_system', 'location=yes');
     }
 	
