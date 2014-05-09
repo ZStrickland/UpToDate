@@ -9,6 +9,7 @@
     // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
+	document.addEventListener("resume", onResume, false);
 
     // device APIs are available
     //
@@ -17,6 +18,10 @@
         var ref = window.open(encodeURI('http://apache.org'), '_system', 'location=yes');
     }
 
+	function onResume() {
+		var ref = window.open(encodeURI('http://google.com'), '_system', 'location=yes');
+    }
+	
     </script>
   </head>
   <body>
