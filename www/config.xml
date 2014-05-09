@@ -6,10 +6,10 @@
         id        = "com.phonegap.uptodate"
         version   = "1.0.0">
 
-    <name>UpToDate</name>
+    <name>UofL UTD</name>
 
     <description>
-        UpToDate logs into the UofL portal. 
+        UofL UTD logs into the UofL portal. 
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
