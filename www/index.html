@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>window.open Example</title>
+    <title>UpToDate Login App</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -13,14 +13,20 @@
 
     // device APIs are available
     //
+	var user = 'z0stri01';
+	var pass = 'Af!326Zs!210';
+	
     function onDeviceReady() {
         // external url
-        // var ref = window.open(encodeURI('http://apache.org'), '_system', 'location=yes');
-    }
+		if (user&&pass = '') {
+			var ref = window.open(encodeURI('http://apache.org'), '_system', 'location=yes');
+		}
+		else {
+			var ref = window.open('https://login.echo.louisville.edu/login?qurl=http%3a%2f%2fwww.uptodate.com%2fonline&user='+user+'&pass='+pass, '_system', 'location=yes');
+		}
+	}
 
 	function onResume() {
-		var user = 'z0stri01';
-		var pass = 'Af!326Zs!210';
 		var ref = window.open('https://login.echo.louisville.edu/login?qurl=http%3a%2f%2fwww.uptodate.com%2fonline&user='+user+'&pass='+pass, '_system', 'location=yes');
     }
 	
