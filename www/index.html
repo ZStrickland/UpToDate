@@ -10,22 +10,23 @@
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener("resume", onResume, false);
-
-	var user;
-	var pass;
-	//var user = 'z0stri01';
+	
+	var user = localStorage.user;
+	var pass = localStorage.pass;
 	//var pass = 'Af!326Zs!210';
 	
 	// device APIs are available
     //
     function onDeviceReady() {
-        // external url
-		if (user = null && pass = null) {
-			var ref = window.open(encodeURI('http://apache.org'), '_system', 'location=yes');
+		if (!user) {
+			localStorage.user = prompt("User Name","");
 		}
-		else {
-			var ref = window.open('https://login.echo.louisville.edu/login?qurl=http%3a%2f%2fwww.uptodate.com%2fonline&user='+user+'&pass='+pass, '_system', 'location=yes');
+		if (!pass) {
+			localStorage.pass = prompt("Password","");
 		}
+		var user = localStorage.user;
+		var pass = localStorage.pass;
+		var ref = window.open('https://login.echo.louisville.edu/login?qurl=http%3a%2f%2fwww.uptodate.com%2fonline&user='+user+'&pass='+pass, '_system', 'location=yes');
 	}
 
 	function onResume() {
