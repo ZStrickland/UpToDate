@@ -45,5 +45,32 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+        
+        app.testSet();
+    },
+    
+    testSet:function(){
+    	console.log("Testing set");
+    	cordova.require("applicationPreferences").set("foo", "bar",
+	      function () {
+	        alert("Successfully set preference 'foo' with value 'bar'");
+            app.testGet();
+	      },
+	      function (error) {
+	        alert("Failed to set preference 'foo' with value 'bar' - error:" + error);
+          }
+        );
+    },
+    
+    testGet:function(){
+        console.log("Testing get");
+    	cordova.require("applicationPreferences").get("foo",
+	      function (value) {
+	        alert("Successful get of preference 'foo' with value '"+value+"'");
+          },
+	      function (error) {
+	        alert("Failed to get value for preference 'foo' - error:" + error);
+	      }
+        );
     }
 };
