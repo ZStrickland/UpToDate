@@ -11,6 +11,8 @@
     document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener("resume", onResume, false);
 
+	var user;
+	var pass;
 	//var user = 'z0stri01';
 	//var pass = 'Af!326Zs!210';
 	
@@ -18,7 +20,7 @@
     //
     function onDeviceReady() {
         // external url
-		if (user = '' && pass = '') {
+		if (user is undefined && pass is undefined) {
 			var ref = window.open(encodeURI('http://apache.org'), '_system', 'location=yes');
 		}
 		else {
